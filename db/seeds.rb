@@ -12,8 +12,8 @@ d2 = PriceRange.create(dollar_signs: 2)
 d3 = PriceRange.create(dollar_signs: 3)
 d4 = PriceRange.create(dollar_signs: 4)
 
-pizza_place = Eatery.create(name: 'La Margarita', yelp_url: 'http://www.yelp.com/biz/la-margarita-new-york-2', lat: 40.721062, lng: -73.988086, price_range: d1)
-vanessas = Eatery.create(name: "Vanessa's Dumpling House", yelp_url: 'http://www.yelp.com/biz/vanessas-dumpling-house-new-york-2', price_range: d1)
+pizza_place = Eatery.create(name: 'La Margarita', company: map, yelp_url: 'http://www.yelp.com/biz/la-margarita-new-york-2', lat: 40.721062, lng: -73.988086, price_range: d1)
+vanessas = Eatery.create(name: "Vanessa's Dumpling House", company: map, yelp_url: 'http://www.yelp.com/biz/vanessas-dumpling-house-new-york-2', price_range: d1)
 
 EateryCuisine.create(eatery: pizza_place, cuisine: pizza)
 EateryCuisine.create(eatery: pizza_place, cuisine: italian)

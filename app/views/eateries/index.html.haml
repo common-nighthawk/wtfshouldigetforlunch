@@ -1,11 +1,7 @@
-.col-sm-6
-  Left Column
-  - Thing.all.each do |thing|
-    = thing.first_attr
-    = thing.second_attr
-
-.col-sm-6
-  Right Column
-  - Thing.all.each do |thing|
-    = thing.first_attr
-    = thing.second_attr
+- @eateries.each do |eatery|
+  .well
+    = eatery.name
+    = eatery.yelp_url
+    = eatery.price_range.dollar_signs
+    - eatery.cuisines.each do |cuisine|
+      = cuisine.name

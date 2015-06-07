@@ -1,0 +1,30 @@
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#hidden-bar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} wtfshouldigetforlunch
+    #hidden-bar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{:href => "#"} Food
+        %li
+          %a{:href => "#"} People
+
+      .navbar-text.hidden-xs
+        = @company.name
+
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            = @user ? @user.name : 'Sign In'
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#"} Profile
+            %li.divider
+            %li
+              %a{:href => "#"} Log Out

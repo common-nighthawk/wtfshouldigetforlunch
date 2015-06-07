@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150606230238) do
   end
 
   create_table "eateries", force: true do |t|
+    t.integer  "company_id"
     t.string   "name"
     t.string   "yelp_url"
     t.decimal  "lat",            precision: 10, scale: 6
