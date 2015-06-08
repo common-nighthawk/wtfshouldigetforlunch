@@ -3,4 +3,5 @@ class Company < ActiveRecord::Base
 
   has_many :users
   has_many :eateries
+  has_many :cuisines, through: :eateries
 end

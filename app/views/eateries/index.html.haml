@@ -1,3 +1,20 @@
+.row
+  .col-sm-6.col-xs-12
+    %h5 Food Type
+    - @company.cuisines.each do |cuisine|
+      %button.btn{class: "button-color-#{1+rand(5)}"}
+        = cuisine.name
+  .col-sm-6.col-xs-12
+    %h5 Price
+    - PriceRange.all.each do |price|
+      %button.btn.btn-primary
+        = '$'*price.dollar_signs
+
+
+
+%br
+%br
+%br
 - @eateries.each do |eatery|
   .well
     = eatery.name
