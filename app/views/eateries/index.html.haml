@@ -1,9 +1,18 @@
 .row
   .col-sm-6.col-xs-12
     %h5 Food Type
-    - @company.cuisines.each do |cuisine|
+
+    %h6 Selected:
+    - @selected_cuisines.each do |cuisine|
       %button.btn{class: "button-color-#{1+rand(5)}"}
-        = cuisine.name
+        %a{:href => eateries_url(cuisines: @selected_cuisines.map(&:name)-[cuisine.name])}
+          = cuisine.name
+
+    %h6 Not Selected:
+    - @non_selected_cuisines.each do |cuisine|
+      %button.btn{class: "button-color-#{1+rand(5)}"}
+        %a{:href => eateries_url(cuisines: (@selected_cuisines.map(&:name) || []) << cuisine.name)}
+          = cuisine.name
   .col-sm-6.col-xs-12
     %h5 Price
     - PriceRange.all.each do |price|
